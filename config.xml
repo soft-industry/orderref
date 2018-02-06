@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>orderref</name>
+	<displayName><![CDATA[Order reference]]></displayName>
+	<version><![CDATA[0.1.0]]></version>
+	<description><![CDATA[Customize your order reference.]]></description>
+	<author><![CDATA[Skorobogatko Alexei]]></author>
+	<tab><![CDATA[administration]]></tab>
+	<is_configurable>1</is_configurable>
+	<need_instance>1</need_instance>
+</module>
