@@ -61,6 +61,11 @@ class Orderref extends Module
         ;
     }
 
+    /**
+     * Module uninstallation.
+     *
+     * @return bool
+     */
     public function uninstall()
     {
         return Configuration::deleteByName('ORDERREF_LENGTH')
@@ -77,7 +82,7 @@ class Orderref extends Module
         $this->_html = '';
         
         /**
-         * If values have been submitted in the form, process.
+         * If values have been submitted in the form, validate and process.
          */
         if (((bool)Tools::isSubmit('submitOrderrefModule')) == true) {
             $errors = $this->postValidation();
@@ -94,7 +99,7 @@ class Orderref extends Module
     }
 
     /**
-     * Create the form that will be displayed in the configuration of your module.
+     * Create the form that will be displayed in the module configuration.
      */
     protected function renderForm()
     {
@@ -122,7 +127,7 @@ class Orderref extends Module
     }
 
     /**
-     * Create the structure of your form.
+     * Creates the structure of the module form.
      */
     protected function getConfigForm()
     {
@@ -173,7 +178,7 @@ class Orderref extends Module
     }
 
     /**
-     * Set values for the inputs.
+     * Set values for the form inputs.
      */
     protected function getConfigFormValues()
     {
@@ -184,14 +189,16 @@ class Orderref extends Module
     }
     
     /**
-     * Validates configuration form post data.
+     * Validates the form post data.
      *
-     * @return array A list of errors.
+     * @return array Returns a list of error messages. An empty list means that
+     * no validation errors.
      */
     protected function postValidation()
     {
         $errors = array();
 
+        // "Length of reference" field.
         if (!($length = Tools::getValue('ORDERREF_LENGTH'))) {
             $errors[] = $this->l('The "Length of reference" field is required.');
         }
@@ -205,6 +212,7 @@ class Orderref extends Module
                 . ' ' . self::ORDERREF_LENGTH_MAX;
         }
         
+        // "How to generate" field.
         if (!($mode = Tools::getValue('ORDERREF_MODE'))) {
             $errors[] = $this->l('The "How to generate order references" field is required.');
         }
