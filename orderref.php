@@ -3,7 +3,7 @@
 * 2018 Soft Industry
 *
 *   @author    Skorobogatko Alexei <a.skorobogatko@soft-industry.com>
-*   @copyright 2016 Soft-Industry
+*   @copyright 2018 Soft-Industry
 *   @license   http://opensource.org/licenses/afl-3.0.php
 */
 
