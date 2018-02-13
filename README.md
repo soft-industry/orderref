@@ -10,6 +10,8 @@ You can choose between:
 You can also define the length of the generated reference (from minimum of 6
 characters to max of 12).
 
+![Screenshot](Screen_Settings.png)
+
 ## Tested on:
 
 1. Prestashop 1.6.1.18
